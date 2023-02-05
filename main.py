@@ -4,7 +4,7 @@ class InputValues:
 
     def __call__(self, func):     # func - ссылка на декорируемую функцию
         def wrapper(*args, **kwargs):
-            d = list(map(lambda x: self.__render(x), func()))
+            d = list(map(self.__render, func()))
             return d
         return wrapper
 
